@@ -1,0 +1,252 @@
+@charset "ISO-8859-1";
+
+html {
+	background-image: url("../img/Wallpaperhtml6.png");
+	background: #FFFFFF url("../img/Wallpaperhtml6.png") no-repeat right top
+		fixed;
+	background-position: 100%;
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+body {
+	width: 800px;
+	margin: 0 auto;
+	padding: 0 20px 20px 20px;
+	border: 5px solid black;
+	color: #fff;
+	font: bold 12px/24px arial;
+}
+
+.botao {
+	position: absolute;
+	top: 390px;
+	left: 620px;
+}
+
+.botao a {
+	font: bold 12px/24px arial;
+	padding: 0px;
+	text-align: center;
+	color: #ccc;
+	background: #666 url('../img/botao_link.gif') no-repeat center center;
+	width: 120px;
+	height: 24px;
+	display: block;
+}
+
+.botao a:hover {
+	background: #666 url('../img/botao_hover.gif') no-repeat center center;
+	color: #999;
+}
+
+h1 {
+	margin: 0;
+	padding: 20px 0;
+	color: #00539f;
+	text-shadow: 2px 2px 1px black;
+}
+
+h2 {
+	margin: 0;
+	padding: 20px 0;
+	color: #3CB371;
+	text-shadow: 2px 2px 2px black;
+}
+
+.tituloFuncionario {
+	color: #778899;
+}
+
+.tituloLocacao {
+	color: #DAA520;
+}
+
+.tituloDevolucao {
+	color: #FF8C00;
+}
+
+.tituloFilme {
+	color: #B22222;
+}
+
+
+
+
+table tr {
+	background: #2E8B57;
+}
+
+
+.margemtop20 {
+	margin-top: 20px;
+}
+
+.waves-effect {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	vertical-align: middle;
+	z-index: 1;
+	-webkit-transition: .3s ease-out;
+	transition: .3s ease-out;
+}
+
+a {
+	color: #039be5;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+a:-webkit-any-link {
+	color: -webkit-link;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+center {
+	text-align: -webkit-center;
+}
+
+.btn, .btn-large, .btn-small {
+	text-decoration: none;
+	color: #fff;
+	background-color: #26a69a;
+	text-align: center;
+	letter-spacing: .5px;
+	-webkit-transition: background-color .2s ease-out;
+	transition: background-color .2s ease-out;
+	cursor: pointer;
+}
+
+.btn, .btn-large, .btn-small, .btn-floating, .btn-large, .btn-small,
+	.btn-flat {
+	font-size: 14px;
+	outline: 0;
+}
+
+.btn, .btn-large, .btn-small, .btn-flat {
+	border: none;
+	border-radius: 2px;
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 16px;
+	text-transform: uppercase;
+	vertical-align: middle;
+	-webkit-tap-highlight-color: transparent;
+}
+
+btn, .btn-large, .btn-small, .btn-floating {
+	-webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0/ 14%), 0 3px 1px -2px
+		rgb(0 0 0/ 12%), 0 1px 5px 0 rgb(0 0 0/ 20%);
+	box-shadow: 0 2px 2px 0 rgb(0 0 0/ 14%), 0 3px 1px -2px rgb(0 0 0/ 12%),
+		0 1px 5px 0 rgb(0 0 0/ 20%);
+}
+
+fieldset {
+	display: block;
+	margin-inline-start: 2px;
+	margin-inline-end: 2px;
+	padding-block-start: 0.35em;
+	padding-inline-start: 0.75em;
+	padding-inline-end: 0.75em;
+	padding-block-end: 0.625em;
+	min-inline-size: min-content;
+	border-width: 2px;
+	border-style: groove;
+	border-color: #2F4F4F;
+	border-image: initial;
+}
+
+legend {
+	font-size: 22px;
+	text-align: center;
+}
+
+.dados_pesoais {
+	width: 700px;
+	height: 110px;
+	padding-top: 20px;
+	background-color: rgba(47, 79, 79, 0.5);
+}
+
+.endereco {
+	width: 700px;
+	height: 155px;
+	padding-top: 20px;
+	background-color: rgba(47, 79, 79, 0.5);
+}
+
+.contato {
+	width: 700px;
+	height: 110px;
+	background-color: rgba(47, 79, 79, 0.5);
+	padding-top: 20px;
+}
+
+.login {
+	width: 700px;
+	height: 60px;
+	background-color: rgba(47, 79, 79, 0.5);
+	padding-top: 20px;
+}
+
+.painelfuncionario{
+	background-color: rgba(119,136,153, 0.25);
+	border-color: #778899;
+}
+
+.painellocacao{
+	background-color: rgba(218,165,32);
+	border-color: #DAA520;
+}
+
+.paineldevolucao{
+	background-color: rgba(255,140,0);
+	border-color: #FF8C00;
+}
+
+.tabeladevolucao{
+	background-color: #B8860B;
+	border-color:  #FF8C00;
+}
+
+.tabelalocacao{
+	background-color: #B8860B;
+	border-color: #DAA520;
+	
+}
+
+.tabelafuncionario{
+	background-color: #808080;
+	border-color: #778899;
+	
+}
+
+.painefilme{
+	background-color: #8B0000;
+	border-color: 	#8B0000;
+}
+
+.tabelafilme{
+	background-color: #B22222;
+	border-color:  	#8B0000;
+}
+

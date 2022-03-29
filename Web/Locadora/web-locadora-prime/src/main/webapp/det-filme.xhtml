@@ -1,0 +1,79 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+	<ui:define name="corpo">
+		<title>Detalhes do Filme</title>
+
+		<h:form id="formDetFilme">
+
+			<p:growl id="growl" showDetail="true" life="4000" />
+
+			<p:tabView>
+
+				<p:tab id="detFilme" title="Detalhes do Filme">
+						<p:panel id="pnFilme">
+
+							<p:panelGrid columns="2">
+
+								<p:outputLabel value="Nome:" />
+								<p:inputText value="#{filmeBacking.nome}" size="45"
+									maxlength="45" placeholder="Ex: A Era do Gelo" disabled="true" />
+								<p:outputLabel value="Valor:" />
+								<p:inputText disabled="true" value="#{filmeBacking.valor}"
+									placeholder="Ex: 10,00" />
+
+								<p:outputLabel value="Disponível:" />
+								<p:selectOneRadio disabled="true" id="disponivel"
+									value="#{filmeBacking.disponivel}">
+									<f:selectItem itemLabel="Sim" itemValue="Sim" />
+									<f:selectItem itemLabel="Não" itemValue="Não" />
+								</p:selectOneRadio>
+
+								<p:outputLabel value="Promoção" />
+								<p:selectOneRadio disabled="true" id="promocao"
+									value="#{filmeBacking.promocao}">
+									<f:selectItem itemLabel="Sim" itemValue="Sim" />
+									<f:selectItem itemLabel="Não" itemValue="Não" />
+								</p:selectOneRadio>
+
+								<p:outputLabel value="Valor Promoção:" />
+								
+								
+								<p:inputNumber disabled="true" value="#{filmeBacking.valorPromocao}" placeholder="Ex: 10,00" symbol="R$" symbolPosition="p"/>
+
+								<p:outputLabel value="Diretor" />
+								<p:inputText disabled="true" value="#{filmeBacking.diretor}"
+									size="45" maxlength="45" placeholder="Ex: Stanley Kubrik" />
+
+								<p:outputLabel value="Ano Lançamento:" />
+								<p:inputText disabled="true"
+									value="#{filmeBacking.anoLancamento}" placeholder="Ex: 1998"
+									size="10" />
+
+								<p:outputLabel value="Faixa Etária:" />
+								<p:inputText disabled="true" value="#{filmeBacking.faixaEtaria}"
+									placeholder="Ex: 18" size="10" />
+
+								<p:outputLabel value="Gênero:" />
+							<p:inputText disabled="true" value="#{filmeBacking.genero}" size="10"/>
+
+							</p:panelGrid>
+								<p:panelGrid columns="3">
+									<p:commandButton id="btnSair" value="Sair"
+										action="#{filmeBacking.sairDetalhes}" update="@form" />
+
+								</p:panelGrid>
+						</p:panel>
+
+				</p:tab>
+
+			</p:tabView>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

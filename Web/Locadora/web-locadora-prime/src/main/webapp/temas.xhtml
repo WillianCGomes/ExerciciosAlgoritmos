@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+	<ui:define name="corpo">
+		<title>Escolha de temas</title>
+
+		<h:form id="escolhaTemas">
+
+			<p:growl id="growl" showDetail="true" life="4000" />
+
+			<p:tabView>
+
+				<p:tab id="escolhaTema" title="Escolha de Temas">
+				
+				<p:themeSwitcher value="#{guestPreferences.theme}" style="width:165px" effect="fade" id="statefulSwitcher">
+				<f:selectItem itemLabel="Escolha de tema" itemValue=""/> 
+				<f:selectItems value="#{themeService.themes}"/> 
+				<p:ajax listener="#{themeService.saveTheme}"/>
+				</p:themeSwitcher>
+				</p:tab>
+			</p:tabView>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+

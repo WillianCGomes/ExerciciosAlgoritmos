@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Exemplo 05 - Criando componente HTML</title>
+</head>
+<body>
+
+    <div align="center">
+
+        <h2>O que o JavaScript pode fazer?</h2>
+        <p>JavaScript pode criar um componente HTML.</p>
+    </div>
+
+    
+<div align="center" id="linha"></div>
+
+<div align="center">
+<br>
+        <input type="button" value="+" onclick="adiciona('linha')" ></input>
+    </div>
+    
+<script type="text/javascript">
+var line =1;
+
+function adiciona(div) {
+	var newDiv = document.createElement('div');
+	newDiv.innerHTML = '[' + line + ']';
+	newDiv.innerHTML += '<input type="text">'
+
+	document.getElementById(div).appendChild(newDiv);
+	line++;
+}
+
+</script>
+    
+</body>
+</html>

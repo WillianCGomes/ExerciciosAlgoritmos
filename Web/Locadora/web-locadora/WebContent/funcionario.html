@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html style='background-image: url("img/Wallpaperhtml2.png");'>
+<head>
+<meta charset="utf-8">
+<title>Cadastro de Funcionários</title>
+<link href="./css/estilo.css" rel="stylesheet">
+<script type="text/javascript" src="js/mascara.js"></script>
+</head>
+<body>
+	<form id="Cadastro Clientes">
+		<div align="center">
+			<h2 class="tituloFuncionario">CADASTRO DE FUNCIONÁRIOS</h2>
+
+			&nbsp &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px" "type="button" value="Novo"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #D2691E" type="button" value="Alterar"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #778899" type="button" value="Excluir"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #B22222" type="button" value="Sair"> &nbsp &nbsp &nbsp &nbsp
+		<br> <br>
+			 
+			<fieldset class="dados_pesoais painelfuncionario">
+				<legend>Dados pessoais</legend>
+				<div class="painel_dados_pesoais">
+
+					Nome:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="text"
+						size="30"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Data
+					de Nascimento: <input type="date" size="10"> &nbsp &nbsp <br>
+					<br> &nbsp CPF: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					&nbsp <input type="text" size="10" onkeyup="masc_cpf(this)">
+					&nbsp RG: <input type="text" size="10" onkeyup="masc_rg(this)">
+					&nbsp &nbsp &nbsp Idade: <input type="text" size="1">  &nbsp &nbsp
+					Sexo: <input type="radio"> Masculino <input type="radio">
+					Feminino &nbsp &nbsp
+				</div>
+			</fieldset>
+			<br> <br>
+			<fieldset class="endereco painelfuncionario">
+				<legend>Endereço</legend>
+
+				Logradouro: &nbsp &nbsp <input type="text" size="10"> &nbsp
+				&nbsp &nbsp &nbsp &nbsp &nbsp Endereço: <input type="text" size="24">
+				&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Número: <input type="text"
+					size="1"> <br> <br> &nbsp Complemento: &nbsp <input
+					type="text" size="10"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				&nbsp &nbsp &nbsp Bairro: <input type="text" size="16">
+				&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp CEP: <input
+					type="text" size="10" onkeyup="masc_cep(this)"> &nbsp <br>
+				<br> Cidade: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<select>
+					<option>Selecione uma Cidade</option>
+					<option>Curitiba</option>
+					<option>Barueri</option>
+				</select> &nbsp &nbsp &nbsp &nbsp UF: <select>
+					<option>Selecione um Estado</option>
+					<option>Paraná</option>
+					<option>São Paulo</option>
+				</select> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+			</fieldset>
+
+			<br> <br>
+
+			<fieldset class="contato painelfuncionario">
+				<legend>Contato</legend>
+				<div class="painel_dados_pesoais">
+
+					&nbsp &nbsp &nbsp &nbspTelefone: &nbsp <input type="text" size="10"
+						onkeyup="masc_telefone(this)">
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					Celular:
+					&nbsp   <input type="text" size="10"
+						onkeyup="masc_celular(this)"> &nbsp &nbsp &nbsp &nbsp
+					&nbsp  
+					<br> <br> 
+					&nbsp &nbsp &nbsp &nbsp
+					E-mail: &nbsp   <input type="text" size="43"> &nbsp &nbsp
+					 &nbsp &nbsp 
+				</div>
+			</fieldset>
+			<br> <br>
+			<fieldset class="login painelfuncionario">
+				<legend>Login</legend>
+			&nbsp &nbsp &nbsp &nbsp
+			Login: &nbsp<input type="text" size="12"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			Senha: <input type="password" size="10">   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+			Perfil de acesso: <input type="text" size="10">  &nbsp &nbsp &nbsp &nbsp
+			
+			</fieldset>
+						
+			<br> 			
+			<input class="waves-effect waves-light margemtop20 btn" style="width:115px"; type="submit" value="Salvar"> &nbsp &nbsp &nbsp 
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 115px; background-color: #B22222"	type="reset" value="Cancelar"> <br>
+
+			<h3>FUNCIONÁRIOS CADASTRADOS</h3>
+			<table border="1">
+				<tr class="painelfuncionario">
+					<th>Nome</th>
+					<th>Cidade</th>
+					<th>Celular</th>
+					<th>E-mail</th>
+				</tr>
+
+				<tr class="tabelafuncionario">
+					<td>Gustavo Henrique</td>
+					<td>Barueri</td>
+					<td>(11)9 9915-6793</td>
+					<td>henrique.gustavo@empresa.com.br</td>
+				</tr>
+
+			</table>
+
+		</div>
+		</form>
+</body>
+</html>

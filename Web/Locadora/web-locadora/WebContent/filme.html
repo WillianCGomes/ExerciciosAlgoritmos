@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html style='background-image: url("img/Wallpaperhtml7.png");'>
+<head>
+<meta charset="utf-8">
+<title>Cadastro de Filmes</title>
+<link href="./css/estilo.css" rel="stylesheet">
+<script type="text/javascript" src="js/mascara.js"></script>
+</head>
+<body>
+	<form id="Cadastro Clientes">
+		<div align="center">
+			<h2 class="tituloFilme">CADASTRO DE FILMES</h2>
+
+			&nbsp &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px" "type="button" value="Novo"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #D2691E" type="button" value="Alterar"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #778899" type="button" value="Excluir"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #B22222" type="button" value="Sair"> &nbsp &nbsp &nbsp &nbsp
+			<br> <br>
+			
+			Nome do Filme:   <input type="text" size="29"> &nbsp &nbsp &nbsp &nbsp 
+			Ano de lançamento: <input type="text" size="1"> &nbsp  &nbsp &nbsp &nbsp
+			Disponível: 			
+			<input type="radio"> Sim &nbsp
+			<input type="radio"> Não
+			
+			 
+			 <br> <br>
+			 Diretor:&nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp <input type="text"size="29">   &nbsp &nbsp &nbsp &nbsp  
+			 
+			
+			 Faixa Etária: 
+			 <select>
+				<option>Selecionar</option>
+				<option>Livre</option>
+				<option>10 anos</option>
+				<option>12 anos</option>
+				<option>14 anos</option>
+				<option>16 anos</option>
+				<option>18 anos</option>
+			</select> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp
+			 
+			 Valor: <input type="text" size="6">
+			
+			
+			<br> <br>
+			 Gênero:&nbsp &nbsp
+			<input type="checkbox"> Ação &nbsp
+			<input type="checkbox"> Comédia &nbsp
+			<input type="checkbox"> Drama &nbsp
+			<input type="checkbox"> Ficção &nbsp
+			<input type="checkbox"> Musical &nbsp
+			<input type="checkbox"> Romance &nbsp
+			<input type="checkbox"> Terror &nbsp			
+			&nbsp | &nbsp &nbsp Outro: &nbsp<input type="text" size="6"> 
+	
+			<br> <br> 
+			 
+			 Promoção: 			
+			<input type="radio"> Sim &nbsp 
+			<input type="radio"> Não &nbsp &nbsp &nbsp
+			
+			Valor da Promoção: <input type="text" size="6">
+			 <br>
+			
+	
+			<input class="waves-effect waves-light margemtop20 btn" style="width:115px"; type="submit" value="Salvar"> &nbsp &nbsp &nbsp 
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 115px; background-color: #B22222"	type="reset" value="Cancelar"> <br>
+
+			<h2 class="tituloFilme">FILMES CADASTRADOS</h2>
+			<table border="1">
+				<tr class="painefilme">
+					
+					<th>Nome</th>
+					<th>Valor</th>
+					<th>Disponível</th>
+					<th>Promoção</th>
+					<th>Valor Promoção</th>
+					
+				</tr>
+
+				<tr class="tabelafilme">
+					<td>A Liga da Justiça de Zack Snyder</td>
+					<td>R$30,00</td>
+					<td>SIM</td>
+					<td>SIM</td>
+					<td>R$25,00</td>
+				</tr>
+
+			</table>
+
+		</div>
+		</form>
+</body>
+</html>

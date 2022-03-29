@@ -1,0 +1,127 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+	<ui:define name="corpo">
+		<title>Alteração de Cliente</title>
+
+		<h:form id="formAltFilme">
+
+			<p:growl id="growl" showDetail="true" life="4000" />
+
+			<p:tabView>
+
+				<p:tab id="altCliente" title="Alteração de Cliente">
+
+					<p:panel id="pnCliente">
+
+						<p:panelGrid columns="2">
+
+							<p:outputLabel value="Nome:" />
+							<p:inputText value="#{clienteBacking.nome}" size="45" disabled="true"
+								maxlength="45" placeholder="Ex: Diego Munhoz" />
+								
+							<p:outputLabel value="CPF:" />
+							<p:inputMask value="#{clienteBacking.cpf}" disabled="true"
+								 mask="999.999.999-99" />
+
+							<p:outputLabel value="RG:" />
+							<p:inputMask value="#{clienteBacking.rg}" disabled="true"
+								 mask="99.999.999-*" />
+
+							<p:outputLabel value="Data Nascimento:" />
+							<p:inputMask value="#{clienteBacking.dataNascimento}" disabled="true"
+								mask="99/99/9999" />
+								
+							<p:outputLabel value="Idade:" />
+							<p:inputNumber value="#{clienteBacking.idade}" disabled="true"
+								placeholder="Ex: 25" size="12" maxValue="110"/>
+								
+							<p:outputLabel value="Sexo:" />
+							<p:selectOneRadio id="Sexo" value="#{clienteBacking.sexo}" disabled="true">
+								<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+								<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+							</p:selectOneRadio>
+								
+							<p:outputLabel value="Telefone:" />
+							<p:inputMask value="#{clienteBacking.telefone}" size="20"
+								placeholder="Ex: (12) 1234-1234" mask="(99) 9999-9999" />
+
+							<p:outputLabel value="Celular:" />
+							<p:inputMask value="#{clienteBacking.celular}" size="20"
+								placeholder="Ex: (12) 91234-1234" mask="(99) 99999-9999" />
+								
+								<p:outputLabel value="Email:" />
+							<p:inputText value="#{clienteBacking.email}" size="45"
+								maxlength="45" placeholder="Ex: TesteEmail@gmail.com" />
+								
+							<p:outputLabel value="Estado:" />
+							<p:selectOneMenu filter="true"
+								value="#{clienteBacking.estado}" size="40">
+								<f:selectItem itemValue="" itemLabel="- Selecione Estado -" />
+								<f:selectItems value="#{clienteBacking.comboEstado}"
+									var="est" itemLabel="#{est.nome}" itemValue="#{est.idEstado}" />
+								<p:ajax event="change" update="cidadeCombo"
+									listener="#{clienteBacking.atualizaCidades()}" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Cidade:" />
+							<p:selectOneMenu id="cidadeCombo" filter="true"
+								value="#{clienteBacking.cidade}"
+								disabled="#{ clienteBacking.statusComboCidade }">
+								<f:selectItem itemValue="" itemLabel="- Selecione uma Cidade -" />
+								<f:selectItems value="#{clienteBacking.listaCidades}"
+									var="cid" itemLabel="#{cid.nome}" itemValue="#{cid.idCidade}" />
+							</p:selectOneMenu>
+								
+							<p:outputLabel value="Logradouro:" />
+							<p:selectOneMenu value="#{clienteBacking.tipoLogradouro}"
+								filter="true">
+								<f:selectItem itemValue=""
+									itemLabel="- Selecione um Logradouro -" />
+								<f:selectItems value="#{ clienteBacking.listaLogradouros }" />
+							</p:selectOneMenu>
+								
+							<p:outputLabel value="Endereço:" />
+							<p:inputText value="#{clienteBacking.nomeEndereco}" size="45"
+								maxlength="45" placeholder="Ex: Av. Copacabana " />
+							
+							<p:outputLabel value="Número:" />
+							<p:inputText value="#{clienteBacking.numero}" size="6"
+								maxlength="6" placeholder="Ex: 190 " />
+								
+							<p:outputLabel value="Complemento:" />
+							<p:inputText value="#{clienteBacking.complemento}" size="45"
+								maxlength="45" placeholder="Ex: APTO 37 " />
+								
+							<p:outputLabel value="Bairro:" />
+							<p:inputText value="#{clienteBacking.bairro}" size="45"
+								maxlength="45" placeholder="Ex: Alphaville " />
+							
+							<p:outputLabel value="CEP:" />
+							<p:inputMask value="#{clienteBacking.cep}"
+								placeholder="Ex: 13104-082 " mask="99999-999" />
+								
+						</p:panelGrid>
+						
+						<p:panelGrid columns="3">
+							<p:commandButton id="btnSalvar" value="Salvar" action="#{clienteBacking.alterarCliente}" update="@form"/>
+							<p:commandButton id="btnSair" value="Sair" action="#{clienteBacking.sair}" update="@form"/>
+						
+						</p:panelGrid>
+						
+					</p:panel>
+					
+					<p:blockUI block="pnCliente" trigger="btnSalvar"/>
+
+				</p:tab>
+
+			</p:tabView>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

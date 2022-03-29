@@ -1,0 +1,79 @@
+@charset "ISO-8859-1";
+
+html {
+	background-image: url("../img/Wallpaperhtml4.png");
+	background: #FFFFFF url("../img/Wallpaperhtml4.png") no-repeat right top
+		fixed;
+	background-position: 100%;
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+
+h2 {
+	margin: 0;
+	padding: 20px 0;
+	color: #3CB371;
+	text-shadow: 2px 2px 2px black;
+}
+
+
+
+.margemtop20 {
+	margin-top: 20px;
+}
+
+
+a {
+	color: #039be5;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+a:-webkit-any-link {
+	color: -webkit-link;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+center {
+	text-align: -webkit-center;
+}
+
+fieldset {
+	display: block;
+	margin-inline-start: 2px;
+	margin-inline-end: 2px;
+	padding-block-start: 0.35em;
+	padding-inline-start: 0.75em;
+	padding-inline-end: 0.75em;
+	padding-block-end: 0.625em;
+	min-inline-size: min-content;
+	border-width: 2px;
+	border-style: groove;
+	border-color: #696969;
+	border-image: initial;
+}
+
+legend {
+	font-size: 40px;
+	text-align: center;
+}
+
+.Cadastro_Filmes {
+	width: 700px;
+	height: 410px;
+	padding-top: 20px 0;
+	background-color: rgba(28,28,28, 0.3);
+}
+

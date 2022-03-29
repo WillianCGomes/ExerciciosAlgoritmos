@@ -1,0 +1,136 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+
+	<ui:define name="corpo">
+		<title>Efetuar Devolução</title>
+
+		<h:form id="listLocacao">
+
+			<p:growl id="growl" showDetail="true" life="4000" />
+
+			<p:tabView>
+				<p:tab id="ltLocacao" title="Devolução de Filmes">
+					<p:panel id="pnLocacaos">
+						<p:panelGrid columns="3">
+
+
+							<p:outputLabel value="Locações:" />
+							<p:selectOneMenu filter="true"
+								value="#{devolucaoBacking.locacao}" size="100">
+								<f:selectItem itemValue="" itemLabel="- Selecione Locação -" />
+								<f:selectItems value="#{devolucaoBacking.listaLocacoes}"
+									var="locacao"
+									itemLabel="Cód: #{locacao.idLocacao} - #{locacao.dataLocacao} - #{locacao.clienteIdCliente.nome}"
+									itemValue="#{locacao.idLocacao}" />
+								<p:ajax event="change" update="@form"
+									listener="#{devolucaoBacking.desbloqueioDevolucao}" />
+							</p:selectOneMenu>
+
+
+							<p:commandButton id="btnSelecionar"
+								disabled="#{devolucaoBacking.bloqueio}" value="Selecionar"
+								action="#{devolucaoBacking.carregarLocacao}" update="@form"
+								style="width: 93px; text-align: center" />
+						</p:panelGrid>
+
+
+
+						<p:panelGrid columns="2">
+
+							<p:outputLabel value="Cliente:" />
+							<p:inputText disabled="true"
+								value="#{devolucaoBacking.nomeCliente}" size="46" />
+
+
+							<p:outputLabel value="Funcionario:" />
+							<p:inputText value="#{devolucaoBacking.nomeFuncionario}" size="46" disabled="true" />
+
+							<p:outputLabel value="Data de Locação:" />
+							<p:inputText disabled="true"
+								value="#{devolucaoBacking.dataLocacao}" size="25" />
+
+							<p:outputLabel value="Data de Devolução:" />
+							<p:inputText disabled="true"
+								value="#{devolucaoBacking.dataDevolucaoLocacao}" size="25" />
+
+							<p:outputLabel value="Data Atual:" />
+							<p:inputText disabled="true"
+								value="#{devolucaoBacking.dataDevolucaoAtual}" size="25" />
+
+						</p:panelGrid>
+
+						<p:spacer height="20" />
+
+						<p:dataTable id="tabelaFilmes"
+							value="#{devolucaoBacking.listaFilmes}" var="filme"
+							emptyMessage="">
+
+							<f:facet name="header">
+            							Filmes Locados
+       								</f:facet>
+
+							<p:column>
+								<f:facet name="header">
+									<h:outputText value="Nome" />
+								</f:facet>
+								<h:outputText value="#{filme.nome}" />
+							</p:column>
+
+							<p:column>
+								<f:facet name="header">
+									<h:outputText value="Gênero" />
+								</f:facet>
+								<h:outputText value="#{filme.genero}" />
+							</p:column>
+
+							<p:column>
+								<f:facet name="header">
+									<h:outputText value="Valor" />
+								</f:facet>
+								<h:outputText value="#{filme.valorEditado}" />
+							</p:column>
+
+						</p:dataTable>
+
+
+						<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+							<div align="center">
+								<p:commandButton value="Sim" type="button"
+									styleClass="ui-confirmdialog-yes" />
+								<p:commandButton value="Não" type="button"
+									styleClass="ui-confirmdialog-no" />
+							</div>
+						</p:confirmDialog>
+					</p:panel>
+
+				</p:tab>
+			</p:tabView>
+
+			<p:spacer />
+			<div align="center">
+				<h:panelGrid columns="3">
+
+					<p:commandButton id="btnDevolver" value="Devolver"
+						disabled="#{!devolucaoBacking.carregado}"
+						action="#{devolucaoBacking.salvar}" update="@form"
+						style="width: 100px; text-align: center" />
+
+					<p:commandButton id="btnCancelar" value="Cancelar"
+						disabled="#{!devolucaoBacking.carregado}"
+						action="#{devolucaoBacking.cancelar}" update="@form"
+						style="width: 100px; text-align: center" />
+
+					<p:commandButton id="btnSair" value="Sair"
+						disabled="#{devolucaoBacking.carregado}"
+						action="#{devolucaoBacking.sair}" update="@form"
+						style="width: 100px; text-align: center" />
+
+				</h:panelGrid>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

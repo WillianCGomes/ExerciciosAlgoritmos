@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html style='background-image: url("img/Wallpaperhtml5.png");'>
+<head>
+<meta charset="utf-8">
+<link href="./css/estilo.css" rel="stylesheet">
+<title>Devolução</title>
+<script type="text/javascript" src="js/mascara.js"></script>
+</head>
+<body>
+	<form id="Cadastro Clientes">
+		<div align="center">
+			<h2 class="tituloDevolucao">DEVOLUÇÃO DE FILMES</h2>
+			&nbsp &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px" "type="button" value="Novo"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #D2691E" type="button" value="Alterar"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #778899" type="button" value="Excluir"> &nbsp &nbsp &nbsp &nbsp
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 70px; background-color: #B22222" type="button" value="Sair"> &nbsp &nbsp &nbsp &nbsp
+			<br> <br>
+			
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspCliente:&nbsp
+			 <select>
+				<option>Selecione o Cliente</option>
+				<option>João Pedro</option>
+				<option>Afonso Pena</option>
+			</select> &nbsp &nbsp
+ 
+			 Filme: &nbsp 
+			 <select>
+				<option>Selecione o Filme</option>
+				<option>A Liga da Justiça de Zack Snyder</option>
+				<option>Alice no País das Maravilhas</option>
+			</select> &nbsp &nbsp &nbsp &nbsp
+			 
+			 <br> <br>
+			&nbsp &nbsp 
+			Data de devolução: <input type="date" size="5"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			Devolvido: 			
+			<input type="radio"> Sim 
+			<input type="radio"> Não
+			 
+			 <h3>DADOS DO CLIENTE</h3>
+			 CPF: <input type="text"size="10" onkeyup="masc_cpf(this)"> &nbsp 
+			 RG: <input type="text" size="10" onkeyup="masc_rg(this)"> &nbsp 
+			 Telefone: <input type="text" size="10" onkeyup="masc_telefone(this)"> &nbsp 
+			 Celular: <input type="text" size="10" onkeyup="masc_celular(this)"> &nbsp 
+			  <br> <br>
+			  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			 E-mail: <input type="text" size="34"> 
+			 <br>
+			 
+			<input class="waves-effect waves-light margemtop20 btn" style="width:115px"; type="submit" value="Salvar"> &nbsp &nbsp &nbsp 
+			<input class="waves-effect waves-light margemtop20 btn" style="width: 115px; background-color: #B22222"	type="reset" value="Cancelar"> <br>
+			
+			<h2 class="tituloDevolucao">REGISTRO DE DEVOLUÇÕES</h2>
+			<table border="1">
+				<tr class="paineldevolucao">
+					<th>Filme</th>
+					<th>Cliente</th>
+					<th>Vendedor</th>
+					<th>Locação</th>
+					<th>Devolução</th>
+				</tr>
+
+				<tr class="tabeladevolucao">
+					<td>Os Vingadores</td>
+					<td>Antonio Alves</td>
+					<td>Willian Gomes</td>
+					<td>10/03/2021</td>
+					<td>25/03/2021</td>
+				</tr>
+
+			</table>
+
+		</div>
+		</form>
+</body>
+</html>

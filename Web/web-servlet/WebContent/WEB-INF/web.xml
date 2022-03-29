@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>web-servlet</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet-mapping>
+		<servlet-name>Exibe-data</servlet-name>
+		<url-pattern>/data</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+	<servlet-name>Exibe-data</servlet-name>
+	<servlet-class>servlet.ExibeHora</servlet-class>
+</servlet>
+
+<servlet-mapping>
+		<servlet-name>exibe-filme</servlet-name>
+		<url-pattern>/grava-filme</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+	<servlet-name>exibe-filme</servlet-name>
+	<servlet-class>servlet.GravaFilme</servlet-class>
+</servlet>
+
+<servlet-mapping>
+		<servlet-name>exibe-tabuada</servlet-name>
+		<url-pattern>/tabuada</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+	<servlet-name>exibe-tabuada</servlet-name>
+	<servlet-class>servlet.Tabuada</servlet-class>
+</servlet>
+
+<servlet-mapping>
+		<servlet-name>exibe-calculo</servlet-name>
+		<url-pattern>/calcula-ajuste</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+	<servlet-name>exibe-calculo</servlet-name>
+	<servlet-class>servlet.Resultado</servlet-class>
+</servlet>
+
+</web-app>

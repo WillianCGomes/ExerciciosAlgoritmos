@@ -1,0 +1,116 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+	<ui:define name="corpo">
+		<title>Consulta de Locações</title>
+
+		<h:form id="listLocacao">
+
+			<p:growl id="growl" showDetail="true" life="4000" />
+
+			<p:tabView>
+
+				<p:tab id="ltFilme" title="Locações Registradas">
+
+					<p:panel id="pnlocacoes">
+
+						<p:spacer height="5" />
+
+						<p:spacer height="20" />
+
+						<h:panelGrid columns="1">
+							<p:dataTable style="text-align: center" id="tabelaFilmes"
+								value="#{locacaoBacking.listaLocacoes}" var="locacao"
+								filteredValue="#{locacaoBacking.listaLocacoesGeralFiltro}"
+								paginatorTemplate="{CurrentPageReport} {FirstPageLink}
+															  {PreviousPageLink} {PageLinks}
+															  {NextPageLink} {LastPageLink}
+															  {Exporters}"
+								paginator="true" rows="5"
+								emptyMessage="Nenhum registro encontrado!"
+								rowKey="#{locacao.idLocacao}" selectionMode="single"
+								selection="#{locacaoBacking.locacaoSelecionada}">
+								<f:facet name="{Exporters}">
+
+									<div style="float: right; padding-top: 2px">
+
+										<h:commandLink>
+											<p:graphicImage name="/demo/images/xlsx.png" width="20" />
+											<p:dataExporter type="xlsxstream" target="tabelaFilmes"
+												fileName="Lista de Locações" />
+										</h:commandLink>
+
+										<h:commandLink id="pdf">
+											<p:graphicImage name="/demo/images/pdf.png" width="20" />
+											<p:dataExporter type="pdf" target="tabelaFilmes"
+												fileName="Lista de Locações" />
+										</h:commandLink>
+
+									</div>
+
+								</f:facet>
+
+								<p:column filterBy="#{locacao.idLocacao}" headerText="Código"
+									filterMatchMode="exact">
+									<h:outputText value="#{locacao.idLocacao}" />
+								</p:column>
+
+								<p:column filterBy="#{locacao.clienteIdCliente.nome}"
+									headerText="Cliente" filterMatchMode="startsWith">
+									<h:outputText value="#{locacao.clienteIdCliente.nome}" />
+								</p:column>
+
+								<p:column filterBy="#{locacao.dataLocacao}"
+									headerText="Data da Locação" filterMatchMode="exact">
+									<h:outputText value="#{locacao.dataLocacao}" />
+								</p:column>
+
+								<p:column filterBy="#{locacao.dataDevolucao}"
+									headerText="Data de Devolução" filterMatchMode="exact">
+									<h:outputText value="#{locacao.dataDevolucao}" />
+								</p:column>
+
+								<p:column filterBy="#{locacao.valor}" headerText="Valor"
+									filterMatchMode="exact">
+									<h:outputText value="#{locacao.valor}" />
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="Devolvido" />
+									</f:facet>
+									<h:outputText value="#{locacao.devolvido}" />
+								</p:column>
+
+							</p:dataTable>
+
+
+							<p:contextMenu for="tabelaFilmes">
+								<p:menuitem value="Detalhes" action="#{locacaoBacking.detalhar}"
+									update="@form" />
+							</p:contextMenu>
+						</h:panelGrid>
+
+						<div align="center">
+							<h:panelGrid columns="1">
+								<p:commandButton id="btnSair" value="Sair"
+									action="#{filmeBacking.sair}" style="width: 200px" />
+							</h:panelGrid>
+						</div>
+
+
+					</p:panel>
+
+
+				</p:tab>
+
+			</p:tabView>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
